@@ -20,7 +20,8 @@ public class Algorithms {
         s = new Scanner(f);
         int twoLetter = 0;
         while (s.hasNext()) {
-            if (s.nextLine().length() == 2)
+            String word = s.nextLine();
+            if (word.length() == 2)
                 {
                     twoLetter++;
                 }
@@ -32,8 +33,9 @@ public class Algorithms {
         s = new Scanner(f);
         String longest = "" ;
         while (s.hasNext()) {
-            if (s.nextLine().length() >= longest.length())
-            longest = s.nextLine();
+            String word = s.nextLine();
+            if (word.length() >= longest.length())
+            longest = word;
         }
         return longest;
     }
