@@ -21,7 +21,9 @@ public class Algorithms {
         int twoLetter = 0;
         while (s.hasNext()) {
             if (s.nextLine().length() == 2)
-                twoLetter++;
+                {
+                    twoLetter++;
+                }
         }
         return twoLetter;
     }
@@ -40,9 +42,15 @@ public class Algorithms {
         s = new Scanner(f);
         int palindromes = 0;
         while (s.hasNext()) {
+            String og = s.nextLine() ;
             String backwards = "" ;
-            if (s.nextLine().equals(backwards))
-            palindromes++ ;
+            for (int i = og.length() - 1; i >= 0; i--) {
+                backwards += og.substring(i, i + 1);
+            }
+            if (og.equals(backwards))
+            {
+                palindromes++ ;
+            }
         }
         return palindromes;
     }
