@@ -9,9 +9,14 @@ public class Algorithms {
         f = new File("words.txt");
         int twoLetters = twoLetters();
         String longest = longest();
+        int fourteen = numOfLetters(14);
+        int fifteen = numOfLetters(15);
         int palindromes = palindromes(); 
         System.out.println("Words with two letters: " + twoLetters);
         System.out.println("Longest Word: " + longest);
+        System.out.println("Number of 14 letter words: " + fourteen);
+        System.out.println("Number of 15 letter words: " + fifteen);
+        /* "representative" in file, of same length?  */
         System.out.println("Number of Palindromes: " + palindromes);
         s.close();
     }
@@ -38,6 +43,17 @@ public class Algorithms {
             longest = word;
         }
         return longest;
+    }
+
+    public static int numOfLetters(int length) throws FileNotFoundException{
+        s = new Scanner(f);
+        int num = 0;
+        while (s.hasNext()) {
+            String word = s.nextLine();
+            if (word.length() == length)
+             num++;
+        }
+        return num;
     }
 
     public static int palindromes() throws FileNotFoundException{
