@@ -16,7 +16,6 @@ public class Algorithms {
         System.out.println("Longest Word: " + longest);
         System.out.println("Number of 14 letter words: " + fourteen);
         System.out.println("Number of 15 letter words: " + fifteen);
-        /* "representative" in file, of same length?  */
         System.out.println("Number of Palindromes: " + palindromes);
         s.close();
     }
@@ -29,6 +28,7 @@ public class Algorithms {
             if (word.length() == 2)
                 {
                     twoLetter++;
+                    // Test: System.out.println(word);
                 }
         }
         return twoLetter;
@@ -51,7 +51,10 @@ public class Algorithms {
         while (s.hasNext()) {
             String word = s.nextLine();
             if (word.length() == length)
+            {
              num++;
+             // Test: System.out.println(word);
+            }
         }
         return num;
     }
@@ -68,6 +71,7 @@ public class Algorithms {
             if (og.equals(backwards))
             {
                 palindromes++ ;
+                // Test: System.out.println(og);
             }
         }
         return palindromes;
